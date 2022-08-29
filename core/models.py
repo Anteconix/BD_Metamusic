@@ -9,4 +9,4 @@ class Usuario(models.Model):
     senha = models.CharField(max_length=100, notnull=True)
 
 class Artista(models.Model):
-    
+    a
