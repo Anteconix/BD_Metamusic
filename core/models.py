@@ -24,4 +24,8 @@ class Noticias(models.Model):
     titulo_noticias = models.CharField(max_length=255)
     conteudo_noticia = models.TextField(max_length=255)
     id_noticia = models.IntegerField(auto_created=True, primary_key=True)
-    
+
+class Banda_Grupo(models.Model):
+    integrantes = models.CharField(max_length=255)
+    id_banda = models.IntegerField(auto_created=True, primary_key=True)
+    dt_criacao = models.
