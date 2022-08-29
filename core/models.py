@@ -28,4 +28,11 @@ class Noticias(models.Model):
 class Banda_Grupo(models.Model):
     integrantes = models.CharField(max_length=255)
     id_banda = models.IntegerField(auto_created=True, primary_key=True)
-    dt_criacao = models.
+    dt_criacao = models.DateField()
+    desc_banda = models.TextField(max_length=2500)
+    nome_banda = models.CharField(max_length=100)
+
+class Musica(models.Model):
+        titulo_musica = models.CharField(max_length=255)
+        id_musica = models.IntegerField(auto_created=True, primary_key=True)
+        tempo_musica = models.TimeField()
