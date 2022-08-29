@@ -19,3 +19,9 @@ class Album(models.Model):
     id_album = models.IntegerField(auto_created=True, primary_key=True)
     numero_musicas = models.IntegerField(max_length=2)
     data = models.TextField(db_column='data', blank=True)
+
+class Noticias(models.Model):
+    titulo_noticias = models.CharField(max_length=255)
+    conteudo_noticia = models.TextField(max_length=255)
+    id_noticia = models.IntegerField(auto_created=True, primary_key=True)
+    
