@@ -18,9 +18,4 @@ class Album(models.Model):
     nome_album = models.CharField(max_length=100)
     id_album = models.IntegerField(auto_created=True, primary_key=True)
     numero_musicas = models.IntegerField(max_length=2)
-    _data = models.TextField(db_column='data', blank=True)
-    def set_data(self, data):
-        self._data = base64.encodestring(data)
-    def get_data(self):
-        return base64.decodestring(self._data)
-    data = property(get_data, set_data)
+    data = models.TextField(db_column='data', blank=True)
