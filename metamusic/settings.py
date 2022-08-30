@@ -8,7 +8,7 @@ SECRET_KEY = 'django-insecure-d-p#s24bay=(-eh-21jx%c6l_cs5=*dc-@3h18v*2rb%dyqw!x
 
 DEBUG = True
 
-ALLOWED_HOSTS = [""]
+ALLOWED_HOSTS = ["metamusicc.herokuapp.com"]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
