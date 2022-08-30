@@ -20,7 +20,7 @@ class Artista(models.Model):
 class Album(models.Model):
     nome_album = models.CharField(max_length=100)
     id_album = models.IntegerField(auto_created=True, primary_key=True)
-    numero_musicas = models.IntegerField(max_length=2)
+    numero_musicas = models.IntegerField()
     data = models.TextField(db_column='data', blank=True)
 
 
