@@ -62,6 +62,20 @@ django = ">=2.2"
 pytz = "*"
 
 [[package]]
+name = "gunicorn"
+version = "20.1.0"
+description = "WSGI HTTP Server for UNIX"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[package.extras]
+eventlet = ["eventlet (>=0.24.1)"]
+gevent = ["gevent (>=1.4.0)"]
+setproctitle = ["setproctitle"]
+tornado = ["tornado (>=0.2)"]
+
+[[package]]
 name = "pytz"
 version = "2022.2.1"
 description = "World timezone definitions, modern and historical"
@@ -88,7 +102,7 @@ python-versions = ">=2"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "2a585955ace2ff6749f4e6203fc83d56e9966fe3db16fbe44597821662d74af2"
+content-hash = "dacaf14472a1b8450fb93f4c5c2ecd2feb7c1a4ea155d91060c8987011e63963"
 
 [metadata.files]
 asgiref = [
@@ -116,6 +130,7 @@ asgiref = [
 django = []
 django-cors-headers = []
 djangorestframework = []
+gunicorn = []
 pytz = []
 sqlparse = [
     {file = "sqlparse-0.4.2-py3-none-any.whl", hash = "sha256:48719e356bb8b42991bdbb1e8b83223757b93789c00910a616a071910ca4a64d"},
