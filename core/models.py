@@ -1,3 +1,4 @@
+from pyexpat import model
 from django.db import models
 
 
@@ -41,3 +42,4 @@ class Musica(models.Model):
     titulo_musica = models.CharField(max_length=255)
     id_musica = models.IntegerField(auto_created=True, primary_key=True)
     tempo_musica = models.TimeField()
+    artistas = models.ManyToManyField(Artista, related_name="musicas")

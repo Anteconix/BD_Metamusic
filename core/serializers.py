@@ -13,7 +13,7 @@ class ArtistaSerializer(ModelSerializer):
         model = Artista
         fields = "__all__"
 
-class AlbumSerializer(ModelSerializer):
+class albunserializer(ModelSerializer):
     class Meta:
         model = Album
         fields = "__all__"
