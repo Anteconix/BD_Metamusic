@@ -1,30 +1,25 @@
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
 
-from core.models import Usuario, Artista, Album, Noticias, Banda_Grupo, Musica
+from core.models import Artista, Album, Noticia, Banda, Musica
 
-from core.serializers import UsuarioSerializer, ArtistaSerializer, albunserializer, NoticiasSerializer, Banda_GrupoSerializer, MusicaSerializer
-
-class UsuarioViewSet(ModelViewSet):
-    queryset = Usuario.objects.all()
-    serializer_class = UsuarioSerializer
-
+from core.serializers import Artistaserializer, albunserializer, NoticiaSerializer, BandaSerializer, MusicaSerializer
 
 class ArtistaViewSet(ModelViewSet):
     queryset = Artista.objects.all()
-    serializer_class = ArtistaSerializer
+    serializer_class = Artistaserializer
 
 class AlbumViewSet(ModelViewSet):
     queryset = Album.objects.all()
     serializer_class = albunserializer
 
-class NoticiasViewSet(ModelViewSet):
-    queryset = Noticias.objects.all()
-    serializer_class = NoticiasSerializer
+class NoticiaViewSet(ModelViewSet):
+    queryset = Noticia.objects.all()
+    serializer_class = NoticiaSerializer
 
-class Banda_GrupoViewSet(ModelViewSet):
-    queryset = Banda_Grupo.objects.all()
-    serializer_class = Banda_GrupoSerializer
+class BandaViewSet(ModelViewSet):
+    queryset = Banda.objects.all()
+    serializer_class = BandaSerializer
 
 class MusicaViewSet(ModelViewSet):
     queryset = Musica.objects.all()

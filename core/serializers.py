@@ -1,14 +1,8 @@
 from rest_framework.serializers import ModelSerializer
 
-from core.models import Usuario, Artista, Album, Noticias, Banda_Grupo, Musica
+from core.models import Artista, Album, Noticia, Banda, Musica
 
-class UsuarioSerializer(ModelSerializer):
-    class Meta:
-        model = Usuario
-        fields = "__all__"
-
-
-class ArtistaSerializer(ModelSerializer):
+class Artistaserializer(ModelSerializer):
     class Meta:
         model = Artista
         fields = "__all__"
@@ -18,14 +12,14 @@ class albunserializer(ModelSerializer):
         model = Album
         fields = "__all__"
 
-class NoticiasSerializer(ModelSerializer):
+class NoticiaSerializer(ModelSerializer):
     class Meta:
-        model = Noticias
+        model = Noticia
         fields = "__all__"
 
-class Banda_GrupoSerializer(ModelSerializer):
+class BandaSerializer(ModelSerializer):
     class Meta:
-        model = Banda_Grupo
+        model = Banda
         fields = "__all__"
 
 class MusicaSerializer(ModelSerializer):
