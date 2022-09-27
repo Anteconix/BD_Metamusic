@@ -3,15 +3,15 @@ from rest_framework.viewsets import ModelViewSet
 
 from core.models import Artista, Album, Noticia, Banda, Musica
 
-from core.serializers import Artistaserializer, albunserializer, NoticiaSerializer, BandaSerializer, MusicaSerializer
+from core.serializers import ArtistaSerializer, AlbumSerializer, NoticiaSerializer, BandaSerializer, MusicaSerializer
 
 class ArtistaViewSet(ModelViewSet):
     queryset = Artista.objects.all()
-    serializer_class = Artistaserializer
+    serializer_class = ArtistaSerializer
 
 class AlbumViewSet(ModelViewSet):
     queryset = Album.objects.all()
-    serializer_class = albunserializer
+    serializer_class = AlbumSerializer
 
 class NoticiaViewSet(ModelViewSet):
     queryset = Noticia.objects.all()
