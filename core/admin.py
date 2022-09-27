@@ -1,5 +1,4 @@
 from django.contrib import admin
-
 from core.models import Artista, Album, Noticia, Banda, Musica
 
 admin.site.register(Artista)
