@@ -6,3 +6,4 @@ from core.serializers import ArtistaSerializer
 class ArtistaViewSet(ModelViewSet):
     queryset = Artista.objects.all()
     serializer_class = ArtistaSerializer
+    permission_classes = [IsAuthenticated]

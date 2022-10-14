@@ -6,3 +6,4 @@ from core.serializers import AlbumSerializer
 class AlbumViewSet(ModelViewSet):
     queryset = Album.objects.all()
     serializer_class = AlbumSerializer
+    permission_classes = [IsAuthenticated]

@@ -6,3 +6,4 @@ from core.serializers import NoticiaSerializer
 class NoticiaViewSet(ModelViewSet):
     queryset = Noticia.objects.all()
     serializer_class = NoticiaSerializer
+    permission_classes = [IsAuthenticated]

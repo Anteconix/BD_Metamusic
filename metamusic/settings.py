@@ -16,8 +16,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework_simplejwt',
     'rest_framework',
     'corsheaders',
+    'media',
+    'drf_spectacular',
     'core',
 ]
 
@@ -77,6 +80,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'pt-br'
 
+AUTH_USER_MODEL = "core.Usuario"
+
 TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
@@ -91,11 +96,30 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+MEDIA_URL = "http://localhost:8000/media/"
+
+MEDIA_ENDPOINT = "/media/"
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media_files/")
+
+FILE_UPLOAD_PERMISSIONS = 0o640
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Metamusic API",
+    "DESCRIPTION": "API para gerenciamento de Metamusic, incluindo endpoints e documentação.",
+    "VERSION": "1.0.0",
+}
+
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
         "rest_framework.permissions.DjangoModelPermissions",
+        
     ],
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
