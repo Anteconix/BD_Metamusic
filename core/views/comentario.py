@@ -6,4 +6,4 @@ from core.serializers import ComentarioSerializer
 class ComentarioViewSet(ModelViewSet):
     queryset = Comentario.objects.all()
     serializer_class = ComentarioSerializer
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]

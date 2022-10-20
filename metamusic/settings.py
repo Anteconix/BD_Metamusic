@@ -111,11 +111,11 @@ SPECTACULAR_SETTINGS = {
 }
 
 REST_FRAMEWORK = {
+    # 'DEFAULT_PERMISSION_CLASSES': [
+    #     'rest_framework.permissions.IsAuthenticated',
+    # ],
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
-    ],
-    'DEFAULT_PERMISSION_CLASSES': [
-        "rest_framework.permissions.DjangoModelPermissions",
+        "rest_framework.permissions.AllowAny",
         
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': (

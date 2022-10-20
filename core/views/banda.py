@@ -6,4 +6,4 @@ from core.serializers import BandaSerializer
 class BandaViewSet(ModelViewSet):
     queryset = Banda.objects.all()
     serializer_class = BandaSerializer
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]

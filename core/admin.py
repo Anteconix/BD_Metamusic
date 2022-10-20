@@ -11,7 +11,7 @@ admin.site.register(Noticia)
 admin.site.register(Banda)
 admin.site.register(Musica)
 admin.site.register(Comentario)
-admin.site.register(Usuario, UserAdmin)
+
 
 
 class UserAdmin(UserAdmin):
@@ -32,3 +32,5 @@ class UserAdmin(UserAdmin):
         ),
         (_("Important dates"), {"fields": ("last_login", "date_joined")}),
     )
+
+admin.site.register(Usuario, UserAdmin)

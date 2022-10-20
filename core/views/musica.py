@@ -6,4 +6,4 @@ from core.serializers import MusicaSerializer
 class MusicaViewSet(ModelViewSet):
     queryset = Musica.objects.all()
     serializer_class = MusicaSerializer
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]

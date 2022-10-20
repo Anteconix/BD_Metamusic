@@ -6,4 +6,4 @@ from core.serializers import UsuarioSerializer
 class UsuarioViewSet(ModelViewSet):
     queryset = Usuario.objects.all()
     serializer_class = UsuarioSerializer
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
