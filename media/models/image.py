@@ -8,7 +8,7 @@ from utils.files import get_content_type
 
 def image_file_path(image, _):
     extension = mimetypes.guess_extension(image.file.file.content_type)
-    if extension == ".jpe":
+    if extension == ".jpeg":
         extension = ".jpg"
     return "images/{}{}".format(image.public_id, extension or "")
 
