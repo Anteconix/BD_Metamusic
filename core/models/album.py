@@ -1,4 +1,6 @@
 from django.db import models
+from media.models import Image
+from django.db import models
 from .banda import Banda
 
 class Album(models.Model):
@@ -9,3 +11,12 @@ class Album(models.Model):
 
     def __str__(self):
         return self.nome_album
+
+    capa_album = models.ForeignKey(
+        Image,
+        related_name="+",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        default=None,
+)

@@ -1,13 +1,17 @@
+import environ
 import os
 from pathlib import Path
 
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-d-p#s24bay=(-eh-21jx%c6l_cs5=*dc-@3h18v*2rb%dyqw!x'
-
-DEBUG = True
-
-ALLOWED_HOSTS = ["*"]
+env = environ.Env()
+environ.Env.read_env((os.path.join(BASE_DIR, '.env')))
+ 
+SECRET_KEY = env('SECRET_KEY')
+DEBUG = env('DEBUG')
+ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(',')
+DATABASES = {'default': env.db()}
 
 INSTALLED_APPS = [
     'django.contrib.admin',
