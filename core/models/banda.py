@@ -22,4 +22,4 @@ class Banda(models.Model):
         null=True,
         blank=True,
         default=None,
-    )       
+    )
