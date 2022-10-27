@@ -3,5 +3,5 @@ from .banda import BandaSerializer
 from .album import AlbumSerializer
 from .musica import MusicaSerializer
 from .noticia import NoticiaSerializer
-from .usuario import UsuarioSerializer
+from .usuario import UserSerializer, RegisterSerializer
 from .comentario import ComentarioSerializer
