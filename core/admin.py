@@ -17,7 +17,7 @@ admin.site.register(Comentario)
 class UserAdmin(UserAdmin):
     fieldsets = (
         (None, {"fields": ("username", "password")}),
-        (_("Personal info"), {"fields": ("first_name", "last_name", "email", "cpf", "telefone", "data_nascimento")}),
+        (_("Personal info"), {"fields": ("first_name", "last_name", "email", "data_nascimento")}),
         (
             _("Permissions"),
             {
