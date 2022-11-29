@@ -1,7 +1,3 @@
-from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
-    TokenRefreshView,
-)
 from django.contrib import admin
 from django.urls import include, path
 from django.conf import settings
@@ -13,9 +9,9 @@ from core.views import (
     NoticiaViewSet,
     BandaViewSet,
     MusicaViewSet,
-    UsuarioViewSet,
     ComentarioViewSet,
 )
+
 from drf_spectacular.views import (
     SpectacularAPIView,
     SpectacularRedocView,
@@ -23,23 +19,19 @@ from drf_spectacular.views import (
 )
 from media.router import router as media_router
 
-from .api import RegisterApi
-
 router = DefaultRouter()
 router.register(r"Artista", ArtistaViewSet)
 router.register(r"Album", AlbumViewSet)
 router.register(r"Noticia", NoticiaViewSet)
 router.register(r"Banda", BandaViewSet)
 router.register(r"Musica", MusicaViewSet)
-router.register(r"Usuario", UsuarioViewSet)
 router.register(r"Comentario", ComentarioViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
-    path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
-    path("register/", RegisterApi.as_view()),
-    path("", include(router.urls)),
+    path("api/", include(router.urls)),
+    path("auth/", include("dj_rest_auth.urls")),
+    path("auth/registration/", include("dj_rest_auth.registration.urls")),
     path("api/media/", include(media_router.urls)),
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
     path(

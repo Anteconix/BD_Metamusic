@@ -1,8 +1,13 @@
+from django.contrib.auth.models import User
 from django.db import models
-from .usuario import Usuario
+
 
 class Comentario(models.Model):
-    usuario = Usuario
+    criado_por = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name="comentarios",
+    )
     data_comentario = models.DateField(auto_now_add=True)
     comentario = models.CharField(max_length=200)
 

@@ -1,34 +1,16 @@
-from core.models import Usuario
+from django.contrib.auth.models import Group
 
-from rest_framework import serializers
-from django.contrib.auth import authenticate
-from django.contrib.auth.hashers import make_password
+from dj_rest_auth.registration.serializers import RegisterSerializer
+from dj_rest_auth.serializers import UserDetailsSerializer
 
-# Register serializer
-class RegisterSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Usuario
-        fields = (
-            "id",
-            "username",
-            "email",            
-            "password",
-        )
-        extra_kwargs = {
-            "password": {"write_only": True},
-        }
 
-    def create(self, validated_data):
-        user = Usuario.objects.create_user(
-            validated_data["username"],
-            validated_data["email"],
-            password=validated_data["password"],
-        )
+class CustomRegisterSerializer(RegisterSerializer):
+    def save(self, request):
+        user = super().save(request)
+        user.groups.add(Group.objects.get(name="leitores"))
         return user
 
 
-# User serializer
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Usuario
-        fields = "__all__"
+class CustomUserDetailsSerializer(UserDetailsSerializer):
+    class Meta(UserDetailsSerializer.Meta):
+        fields = UserDetailsSerializer.Meta.fields + ("is_active", "is_staff")

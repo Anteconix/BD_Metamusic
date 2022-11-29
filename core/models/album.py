@@ -1,7 +1,7 @@
 from django.db import models
 from media.models import Image
-from django.db import models
 from .banda import Banda
+
 
 class Album(models.Model):
     nome_album = models.CharField(max_length=100)
@@ -19,4 +19,4 @@ class Album(models.Model):
         null=True,
         blank=True,
         default=None,
-)
+    )
