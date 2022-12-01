@@ -120,7 +120,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
-MEDIA_URL = "http://localhost:8000/media/"
+MEDIA_URL = "https://metamusic.pythonanywhere.com/media/"
 
 MEDIA_ENDPOINT = "/media/"
 
