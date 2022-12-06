@@ -21,7 +21,6 @@ class Banda(models.Model):
         blank=True,
         default=None,
     )
-    
 
     def __str__(self):
         return self.nome_banda
