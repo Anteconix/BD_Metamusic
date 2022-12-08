@@ -1,4 +1,5 @@
-from rest_framework.serializers import ModelSerializer, SlugRelatedField, ImageSerializer
+from rest_framework.serializers import ModelSerializer, SlugRelatedField
+from media.serializers import ImageSerializer
 from core.models import Noticia
 from media.models import Image
 
@@ -14,4 +15,4 @@ class NoticiaSerializer(ModelSerializer):
         required=False,
         write_only=True,
     )
-    foto_noticia = ImageSerializer(required=False, read_only=True)   
+    foto_noticia = ImageSerializer(required=False, read_only=True)
