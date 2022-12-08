@@ -9,7 +9,6 @@ class Comentario(models.Model):
         related_name="comentarios",
     )
     data_comentario = models.DateField(auto_now_add=True)
-    quem = models.ManyToManyField(User, related_name="comentarios")
     comentario = models.CharField(max_length=200)
 
     def __str__(self):
