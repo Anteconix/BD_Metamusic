@@ -1,5 +1,6 @@
 from rest_framework.serializers import ModelSerializer, SlugRelatedField
 from core.models import Noticia
+from media.models import Image
 
 class NoticiaSerializer(ModelSerializer):
     class Meta:
