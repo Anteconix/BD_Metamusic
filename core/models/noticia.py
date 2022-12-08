@@ -1,4 +1,7 @@
 from django.db import models
+from media.models import Image
+from media.models import Image
+
 
 class Noticia(models.Model):
     titulo_noticia = models.CharField(max_length=255)
