@@ -16,18 +16,18 @@ DEBUG = env("DEBUG")
 
 ALLOWED_HOSTS = env("ALLOWED_HOSTS").split(",")
 
-# DATABASES = {"default": env.db()}
+DATABASES = {"default": env.db()}
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "metamusic",
-        "USER": "aluno",
-        "PASSWORD": "aluno",
-        "HOST": "127.0.0.1",
-        "PORT": "3306",
-    }
-}
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.mysql",
+#         "NAME": "metamusic",
+#         "USER": "aluno",
+#         "PASSWORD": "aluno",
+#         "HOST": "127.0.0.1",
+#         "PORT": "3306",
+#     }
+# }
 
 # CREATE DATABASE metamusic;
 
