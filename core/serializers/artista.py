@@ -7,6 +7,7 @@ class ArtistaSerializer(ModelSerializer):
     class Meta:
         model = Artista
         fields = "__all__"
+
     foto_artista_attachment_key = SlugRelatedField(
         source="foto_artista",
         queryset=Image.objects.all(),
@@ -15,3 +16,4 @@ class ArtistaSerializer(ModelSerializer):
         write_only=True,
     )
     foto_artista = ImageSerializer(required=False, read_only=True) 
+

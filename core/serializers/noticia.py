@@ -16,3 +16,4 @@ class NoticiaSerializer(ModelSerializer):
         write_only=True,
     )
     foto_noticia = ImageSerializer(required=False, read_only=True)
+

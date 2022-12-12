@@ -1,7 +1,7 @@
 asgiref==3.5.2 ; python_version >= "3.8" and python_version < "4.0"
 attrs==22.1.0 ; python_version >= "3.8" and python_version < "4.0"
 backports-zoneinfo==0.2.1 ; python_version >= "3.8" and python_version < "3.9"
-certifi==2022.9.24 ; python_version >= "3.8" and python_version < "4"
+certifi==2022.12.7 ; python_version >= "3.8" and python_version < "4"
 cffi==1.15.1 ; python_version >= "3.8" and python_version < "4.0"
 charset-normalizer==2.1.1 ; python_version >= "3.8" and python_version < "4"
 cryptography==38.0.4 ; python_version >= "3.8" and python_version < "4.0"
